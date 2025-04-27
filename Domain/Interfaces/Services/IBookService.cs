@@ -14,4 +14,8 @@ public interface IBookService
     void Update(int id, BookDto livroDto);
 
     void Delete(int id);
+
+    IEnumerable<BookDto> SearchByName(string bookName);
+
+    IEnumerable<BookDto> SearchByAuthor(string bookAuthor);
 }

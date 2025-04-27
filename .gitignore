@@ -1,1 +1,42 @@
+# Visual Studio temporary files, build results, and settings
 .vs/
+bin/
+obj/
+*.csproj.user
+*.suo
+*.sln.docstates
+*.Build.props
+*.Publish.xml
+
+# NuGet related files
+packages/
+*.nupkg
+*.psmdcp
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# User-specific files
+*.userprefs
+
+# ASP.NET Core runtime
+*.razor.vs.bin
+*.cshtml.vs.bin
+
+# Other temporary files
+_ReSharper*/
+*.orig
+*.bak
+*.swp
+*.$$$
+*.pid
+*.log
+
+# Environment-specific files (if you use them)
+# appsettings.Development.json
+# appsettings.Staging.json
+# Publish profiles
+PublishProfiles/
