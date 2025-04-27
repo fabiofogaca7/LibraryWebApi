@@ -13,4 +13,8 @@ public interface IBookRepository
     void Update(Book book);
 
     void Delete(int id);
+
+    IEnumerable<Book> SearchByName(string bookName);
+
+    IEnumerable<Book> SearchByAuthor(string bookAuthor);
 }

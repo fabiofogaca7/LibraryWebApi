@@ -51,4 +51,16 @@ public class BookService : IBookService
             _bookRepository.Update(existingBook);
         }
     }
+
+    public IEnumerable<BookDto> SearchByName(string bookName)
+    {
+        var books = _bookRepository.SearchByName(bookName);
+        return _mapper.Map<IEnumerable<BookDto>>(books);
+    }
+
+    public IEnumerable<BookDto> SearchByAuthor(string bookAuthor)
+    {
+        var books = _bookRepository.SearchByAuthor(bookAuthor);
+        return _mapper.Map<IEnumerable<BookDto>>(books);
+    }
 }

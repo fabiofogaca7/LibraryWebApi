@@ -49,4 +49,28 @@ public class BookRepository : IBookRepository
             _context.SaveChanges();
         }
     }
+
+    public IEnumerable<Book> SearchByName(string bookName)
+    {
+        if (string.IsNullOrEmpty(bookName))
+        {
+            return _context.Book.ToList();
+        }
+
+        bookName = bookName.ToLower();
+
+        return _context.Book.Where(i => i.Title.ToLower().Contains(bookName)).ToList();
+    }
+
+    public IEnumerable<Book> SearchByAuthor(string bookAuthor)
+    {
+        if (string.IsNullOrEmpty(bookAuthor))
+        {
+            return _context.Book.ToList();
+        }
+
+        bookAuthor = bookAuthor.ToLower();
+
+        return _context.Book.Where(i => i.Author.ToLower().Contains(bookAuthor)).ToList();
+    }
 }

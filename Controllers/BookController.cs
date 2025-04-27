@@ -56,4 +56,18 @@ public class BookController : ControllerBase
         _bookService.Delete(id);
         return NoContent();
     }
+
+    [HttpGet("SearchByName")]
+    public ActionResult<IEnumerable<BookDto>> SerachByName(string bookName)
+    {
+        var result = _bookService.SearchByName(bookName);
+        return Ok(result);
+    }
+
+    [HttpGet("SearchByAuthor")]
+    public ActionResult<IEnumerable<BookDto>> SearchByAuthor(string bookAuthor)
+    {
+        var result = _bookService.SearchByAuthor(bookAuthor);
+        return Ok(result);
+    }
 }
